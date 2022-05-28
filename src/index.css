@@ -1,0 +1,88 @@
+:root{
+  --footerHeight: 50px;
+}
+
+#container{
+  display:grid;
+  height: var(--footerHeight);
+  grid-template-columns: auto;
+  grid-template-areas: 
+  "header"
+  "main";
+}
+
+#header{
+  background: #2196f3;
+  grid-area:header;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 10% 25% 50%;
+  grid-template-areas: 
+  ". buttons .";
+  height:100%;
+}
+
+
+#main{
+  grid-area:main;
+  display: grid;
+  grid-template-columns: 225px 225px 225px 225px 225px;
+  grid-template-rows: auto;
+  justify-content: space-evenly;
+  grid-row-gap: 25px;
+}
+
+
+@media (max-width:1119px){
+  #main{
+    grid-template-columns: 225px 225px 225px;
+    grid-row-gap: 10px;
+  }
+  #header{
+    grid-template-columns: 10% 40% 50%;
+  }
+}
+
+@media (max-width:719px){
+  #main{
+    grid-template-columns: 225px;
+    grid-row-gap: 5px;
+  }
+  #header{
+    grid-template-columns: 5% 70% 25%;
+  }
+}
+
+img{
+  width:225px;
+  height: 225px;
+  z-index: 0;
+}
+
+.navigation{
+  grid-area: buttons;
+}
+
+button{
+  padding: 15px;
+  height: var(--footerHeight);
+  border: none;
+}
+
+.imgLike{
+  height: 40px;
+  width: 37px;
+  position:relative;
+  top:-50px;
+  right: -180px;
+  z-index: 1;
+  opacity: 0;
+}
+
+.imgWithLike{
+  height: 225px;
+}
+
+.imgWithLike:hover > .imgLike{
+  opacity: 1;
+}
