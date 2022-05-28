@@ -11,7 +11,7 @@ class API {
         })
     }
     getCats = () => {
-        return this.axios.get("https://api.thecatapi.com/v1/images/search?limit=15")
+        return this.axios.get("https://api.thecatapi.com/v1/images/search?limit=30")
         .then((response) => {
             return (response.data.map(
                 (respPart) => (respPart.url)
