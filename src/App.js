@@ -57,7 +57,7 @@ function App(){
               )
             })}
         </div>
-        <center>... Загружаем ещё котиков ...</center>
+        {activeFirst && (<center>... Загружаем ещё котиков ...</center>)}
       </div>
   )
 }
